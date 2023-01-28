@@ -5,7 +5,7 @@ class My_PT_Panel(bpy.types.Panel):
     bl_label = "MyPanel"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
-    bl_category = "Ops"
+    bl_category = "Utils"
 
     def draw(self, context):
         layout = self.layout
