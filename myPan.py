@@ -8,7 +8,9 @@ class My_PT_Panel(bpy.types.Panel):
     bl_category = "Utils"
 
     def draw(self, context):
-        row = self.layout.row()
+        # row = self.layout.row()
+        col = self.layout.column()
         
-        row.operator("object.apply_all_modifiers", text="Apply all modifiers")        
-        row.operator("object.delete_all_modifiers", text="Cancel all modifiers")
+        col.operator("object.apply_all_modifiers", text="Apply all modifiers")        
+        col.operator("object.delete_all_modifiers", text="Cancel all modifiers")
+        col.operator("object.shade_smooth_auto", text="Shade auto smooth")

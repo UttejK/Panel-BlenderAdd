@@ -51,3 +51,26 @@ class MO_OT_Cancel_All_Op(bpy.types.Operator):
             bpy.ops.object.modifier_remove(modifier= mod.name)
 
         return {"FINISHED"}
+
+class MO_OT_ShadeAutoSmooth(bpy.types.Operator):
+    bl_idname = "object.shade_smooth_auto"
+    bl_label = "Shade Auto Smooth"
+    bl_description = "Shades the object smooth respecting the normals"
+    bl_options = {"REGISTER"}
+
+    @classmethod
+    def poll(cls, context):
+        obj = context.object
+
+        if obj is not None:
+            if obj.mode == 'OBJECT':
+                return True
+        
+        return False
+
+
+    def execute(self, context):
+               
+        bpy.ops.object.shade_smooth(use_auto_smooth=True)
+
+        return {"FINISHED"}
