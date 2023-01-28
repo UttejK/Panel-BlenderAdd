@@ -24,10 +24,10 @@ bl_info = {
 
 import bpy
 
-from .MyOp import MO_OT_Apply_All_Op
+from .MyOp import MO_OT_Apply_All_Op, MO_OT_Cancel_All_Op
 from .myPan import My_PT_Panel
 
-classes = (MO_OT_Apply_All_Op, My_PT_Panel)
+classes = (MO_OT_Apply_All_Op, MO_OT_Cancel_All_Op, My_PT_Panel)
 
 def register():
     for c in classes:

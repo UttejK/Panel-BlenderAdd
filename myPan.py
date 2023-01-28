@@ -8,14 +8,7 @@ class My_PT_Panel(bpy.types.Panel):
     bl_category = "Utils"
 
     def draw(self, context):
-        layout = self.layout
-
-        # 2 columns with buttons
-        row = layout.row()
-        col = row.column()
-        col.operator("object.apply_all_mods", text="Apply all modifiers")
-
-        col = row.column()
-        col.operator("object.cancel_all_mods", text="Cancel all modifiers")
-
-
+        row = self.layout.row()
+        
+        row.operator("object.apply_all_modifiers", text="Apply all modifiers")        
+        row.operator("object.delete_all_modifiers", text="Cancel all modifiers")
